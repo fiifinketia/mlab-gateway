@@ -1,0 +1,28 @@
+{
+   "endpoint": "/billings/balance",
+   "method": "POST",
+  {{ include "input_headers.tmpl"}},
+   "backend": [
+   {
+     "url_pattern": "/api/billings/balance",
+     "extra_config": {
+       {{ include "rate_limit_backend.tmpl"}}
+     },
+     "host": ["{{ .service.default_host }}"]
+   }
+   ]
+},
+{
+   "endpoint": "/billings/check",
+   "method": "POST",
+  {{ include "input_headers.tmpl"}},
+   "backend": [
+   {
+     "url_pattern": "/api/billings/check",
+     "extra_config": {
+       {{ include "rate_limit_backend.tmpl"}}
+     },
+     "host": ["{{ .service.default_host }}"]
+   }
+   ]
+}

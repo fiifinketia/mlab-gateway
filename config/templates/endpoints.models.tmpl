@@ -1,0 +1,76 @@
+{
+   "endpoint": "/models",
+   "method": "GET",
+  {{ include "input_headers.tmpl"}},
+   "backend": [
+   {
+     "url_pattern": "/api/models",
+     "extra_config": {
+       {{ include "rate_limit_backend.tmpl"}}
+     },
+     "host": ["{{ .service.default_host }}"]
+   }
+   ]
+},
+{
+   "endpoint": "/models",
+   "method": "POST",
+  {{ include "input_headers.tmpl"}},
+   "backend": [
+   {
+     "url_pattern": "/api/models",
+     "extra_config": {
+       {{ include "rate_limit_backend.tmpl"}},
+        "plugin/http-client":{
+	           "name":"bill-balance",
+	           "bill-balance":{
+	               "path": "/api/models"
+	           }
+	      }
+     },
+     "host": ["{{ .service.default_host }}"]
+   }
+   ]
+},
+{
+   "endpoint": "/models/{model_id}",
+   "method": "GET",
+  {{ include "input_headers.tmpl"}},
+   "backend": [
+   {
+     "url_pattern": "/api/models/{model_id}",
+     "extra_config": {
+       {{ include "rate_limit_backend.tmpl"}}
+     },
+     "host": ["{{ .service.default_host }}"]
+   }
+   ]
+},
+{
+   "endpoint": "/models/{model_id}",
+   "method": "DELETE",
+  {{ include "input_headers.tmpl"}},
+   "backend": [
+   {
+     "url_pattern": "/api/models/{model_id}",
+     "extra_config": {
+       {{ include "rate_limit_backend.tmpl"}}
+     },
+     "host": ["{{ .service.default_host }}"]
+   }
+   ]
+},
+{
+   "endpoint": "/models/{model_id}",
+   "method": "UPDATE",
+  {{ include "input_headers.tmpl"}},
+   "backend": [
+   {
+     "url_pattern": "/api/models/{model_id}",
+     "extra_config": {
+       {{ include "rate_limit_backend.tmpl"}}
+     },
+     "host": ["{{ .service.default_host }}"]
+   }
+   ]
+}

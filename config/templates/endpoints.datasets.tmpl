@@ -1,0 +1,76 @@
+{
+   "endpoint": "/datasets",
+   "method": "GET",
+  {{ include "input_headers.tmpl"}},
+   "backend": [
+   {
+     "url_pattern": "/api/datasets",
+     "extra_config": {
+       {{ include "rate_limit_backend.tmpl"}}
+     },
+     "host": ["{{ .service.default_host }}"]
+   }
+   ]
+},
+{
+    "endpoint": "/datasets",
+    "method": "POST",
+  {{ include "input_headers.tmpl"}},
+  "backend": [
+    {
+        "url_pattern": "/api/datasets",
+        "extra_config": {
+        {{ include "rate_limit_backend.tmpl"}},
+        "plugin/http-client":{
+	           "name":"bill-balance",
+	           "bill-balance":{
+	               "path": "/api/datasets"
+	           }
+	        }
+        },
+        "host": ["{{ .service.default_host }}"]
+    }
+    ]
+},
+{
+   "endpoint": "/datasets/{model_id}",
+   "method": "GET",
+  {{ include "input_headers.tmpl"}},
+   "backend": [
+   {
+     "url_pattern": "/api/datasets/{model_id}",
+     "extra_config": {
+       {{ include "rate_limit_backend.tmpl"}}
+     },
+     "host": ["{{ .service.default_host }}"]
+   }
+   ]
+},
+{
+   "endpoint": "/datasets/{model_id}",
+   "method": "DELETE",
+  {{ include "input_headers.tmpl"}},
+   "backend": [
+   {
+     "url_pattern": "/api/datasets/{model_id}",
+     "extra_config": {
+       {{ include "rate_limit_backend.tmpl"}}
+     },
+     "host": ["{{ .service.default_host }}"]
+   }
+   ]
+},
+{
+   "endpoint": "/datasets/{model_id}",
+   "method": "UPDATE",
+  {{ include "input_headers.tmpl"}},
+   "backend": [
+   {
+     "url_pattern": "/api/datasets/{model_id}",
+     "extra_config": {
+       {{ include "rate_limit_backend.tmpl"}}
+     },
+     "host": ["{{ .service.default_host }}"]
+   }
+   ]
+}
