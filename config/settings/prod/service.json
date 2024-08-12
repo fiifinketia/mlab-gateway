@@ -8,6 +8,19 @@
 	"extra_config": {
 		"router": {
 			"auto_options": true
+		},
+		"security/cors": {
+			"allow_origins": [
+				"http://localhost:3000",
+				"https://mlab.appatechlab.com:8080",
+				"https://disal.appatechlab.com:8080"
+			],
+			"allow_methods": ["*"],
+			"expose_headers": ["*"],
+			"allow_headers": ["A*"],
+			"max_age": "12h",
+			"allow_credentials": true,
+			"debug": false
 		}
 	},
 	"plugin": {
