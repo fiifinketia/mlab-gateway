@@ -13,20 +13,6 @@
    ]
 },
 {
-   "endpoint": "/api/datasets",
-   "method": "OPTIONS",
-  {{ include "input_headers.tmpl"}},
-   "backend": [
-   {
-     "url_pattern": "/api/datasets",
-     "extra_config": {
-       {{ include "rate_limit_backend.tmpl"}}
-     },
-     "host": ["{{ .service.default_host }}"]
-   }
-   ]
-},
-{
     "endpoint": "/api/datasets",
     "method": "POST",
   {{ include "input_headers.tmpl"}},
@@ -47,12 +33,12 @@
     ]
 },
 {
-   "endpoint": "/api/datasets/{dataset_id}",
+   "endpoint": "/api/datasets/{model_id}",
    "method": "GET",
   {{ include "input_headers.tmpl"}},
    "backend": [
    {
-     "url_pattern": "/api/datasets/{dataset_id}",
+     "url_pattern": "/api/datasets/{model_id}",
      "extra_config": {
        {{ include "rate_limit_backend.tmpl"}}
      },
@@ -61,12 +47,12 @@
    ]
 },
 {
-   "endpoint": "/api/datasets/{dataset_id}",
+   "endpoint": "/api/datasets/{model_id}",
    "method": "DELETE",
   {{ include "input_headers.tmpl"}},
    "backend": [
    {
-     "url_pattern": "/api/datasets/{dataset_id}",
+     "url_pattern": "/api/datasets/{model_id}",
      "extra_config": {
        {{ include "rate_limit_backend.tmpl"}}
      },
@@ -75,26 +61,12 @@
    ]
 },
 {
-   "endpoint": "/api/datasets/{dataset_id}",
+   "endpoint": "/api/datasets/{model_id}",
    "method": "UPDATE",
   {{ include "input_headers.tmpl"}},
    "backend": [
    {
-     "url_pattern": "/api/datasets/{dataset_id}",
-     "extra_config": {
-       {{ include "rate_limit_backend.tmpl"}}
-     },
-     "host": ["{{ .service.default_host }}"]
-   }
-   ]
-},
-{
-   "endpoint": "/api/datasets/{dataset_id}",
-   "method": "OPTIONS",
-  {{ include "input_headers.tmpl"}},
-   "backend": [
-   {
-     "url_pattern": "/api/datasets/{dataset_id}",
+     "url_pattern": "/api/datasets/{model_id}",
      "extra_config": {
        {{ include "rate_limit_backend.tmpl"}}
      },
