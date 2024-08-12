@@ -1,5 +1,5 @@
 {
-   "endpoint": "/jobs",
+   "endpoint": "/api/jobs",
    "method": "GET",
   {{ include "input_headers.tmpl"}},
    "backend": [
@@ -13,7 +13,7 @@
    ]
 },
 {
-   "endpoint": "/jobs",
+   "endpoint": "/api/jobs",
    "method": "POST",
   {{ include "input_headers.tmpl"}},
    "backend": [
@@ -33,7 +33,7 @@
    ]
 },
 {
-   "endpoint": "/jobs/{job_id}",
+   "endpoint": "/api/jobs/{job_id}",
    "method": "GET",
   {{ include "input_headers.tmpl"}},
    "backend": [
@@ -47,7 +47,7 @@
    ]
 },
 {
-   "endpoint": "/jobs/{job_id}",
+   "endpoint": "/api/jobs/{job_id}",
    "method": "DELETE",
   {{ include "input_headers.tmpl"}},
    "backend": [
@@ -61,7 +61,7 @@
    ]
 },
 {
-   "endpoint": "/jobs/{job_id}",
+   "endpoint": "/api/jobs/{job_id}",
    "method": "UPDATE",
   {{ include "input_headers.tmpl"}},
    "backend": [
@@ -75,7 +75,7 @@
    ]
 },
 {
-   "endpoint": "/jobs/stop/{job_id}",
+   "endpoint": "/api/jobs/stop/{job_id}",
    "method": "POST",
   {{ include "input_headers.tmpl"}},
    "backend": [
@@ -95,7 +95,7 @@
    ]
 },
 {
-   "endpoint": "/jobs/close/{job_id}",
+   "endpoint": "/api/jobs/close/{job_id}",
    "method": "POST",
   {{ include "input_headers.tmpl"}},
    "backend": [
@@ -115,7 +115,7 @@
    ]
 },
 {
-   "endpoint": "/jobs/{job_type}",
+   "endpoint": "/api/jobs/{job_type}",
    "method": "POST",
   {{ include "input_headers.tmpl"}},
    "backend": [
@@ -135,7 +135,7 @@
    ]
 },
 {
-   "endpoint": "/jobs/upload/test/{job_id}",
+   "endpoint": "/api/jobs/upload/test/{job_id}",
    "method": "POST",",
   {{ include "input_headers.tmpl"}},
    "backend": [

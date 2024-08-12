@@ -86,7 +86,7 @@ func (r registerer) registerClients(_ context.Context, extra map[string]interfac
 			balanceReqBody := []byte(fmt.Sprintf(`{"action":"%s", "data": %s}`, action, inRequestBody))
 			balanceReqReader := bytes.NewReader(balanceReqBody)
 
-			balanceReq, err := http.NewRequest(http.MethodPost, "http://localhost:8095/billings/balance", balanceReqReader)
+			balanceReq, err := http.NewRequest(http.MethodPost, "http://localhost:8090/api/billings/balance", balanceReqReader)
 
 			if err != nil {
 				http.Error(w, err.Error(), http.StatusInternalServerError)

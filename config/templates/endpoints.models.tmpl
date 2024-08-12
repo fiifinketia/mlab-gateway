@@ -1,5 +1,5 @@
 {
-   "endpoint": "/models",
+   "endpoint": "/api/models",
    "method": "GET",
   {{ include "input_headers.tmpl"}},
    "backend": [
@@ -13,7 +13,7 @@
    ]
 },
 {
-   "endpoint": "/models",
+   "endpoint": "/api/models",
    "method": "POST",
   {{ include "input_headers.tmpl"}},
    "backend": [
@@ -33,7 +33,7 @@
    ]
 },
 {
-   "endpoint": "/models/{model_id}",
+   "endpoint": "/api/models/{model_id}",
    "method": "GET",
   {{ include "input_headers.tmpl"}},
    "backend": [
@@ -47,7 +47,7 @@
    ]
 },
 {
-   "endpoint": "/models/{model_id}",
+   "endpoint": "/api/models/{model_id}",
    "method": "DELETE",
   {{ include "input_headers.tmpl"}},
    "backend": [
@@ -61,7 +61,7 @@
    ]
 },
 {
-   "endpoint": "/models/{model_id}",
+   "endpoint": "/api/models/{model_id}",
    "method": "UPDATE",
   {{ include "input_headers.tmpl"}},
    "backend": [

@@ -1,5 +1,5 @@
 {
-   "endpoint": "/datasets",
+   "endpoint": "/api/datasets",
    "method": "GET",
   {{ include "input_headers.tmpl"}},
    "backend": [
@@ -13,7 +13,7 @@
    ]
 },
 {
-    "endpoint": "/datasets",
+    "endpoint": "/api/datasets",
     "method": "POST",
   {{ include "input_headers.tmpl"}},
   "backend": [
@@ -33,7 +33,7 @@
     ]
 },
 {
-   "endpoint": "/datasets/{model_id}",
+   "endpoint": "/api/datasets/{model_id}",
    "method": "GET",
   {{ include "input_headers.tmpl"}},
    "backend": [
@@ -47,7 +47,7 @@
    ]
 },
 {
-   "endpoint": "/datasets/{model_id}",
+   "endpoint": "/api/datasets/{model_id}",
    "method": "DELETE",
   {{ include "input_headers.tmpl"}},
    "backend": [
@@ -61,7 +61,7 @@
    ]
 },
 {
-   "endpoint": "/datasets/{model_id}",
+   "endpoint": "/api/datasets/{model_id}",
    "method": "UPDATE",
   {{ include "input_headers.tmpl"}},
    "backend": [
