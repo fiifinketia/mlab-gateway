@@ -14,6 +14,26 @@
 },
 {
    "endpoint": "/api/jobs",
+   "method": "OPTIONS",
+  {{ include "input_headers.tmpl"}},
+   "backend": [
+   {
+     "url_pattern": "/api/jobs",
+     "extra_config": {
+       {{ include "rate_limit_backend.tmpl"}},
+        "plugin/http-client":{
+	           "name":"bill-balance",
+	           "bill-balance":{
+	               "path": "/api/jobs"
+	           }
+	      }
+     },
+     "host": ["{{ .service.default_host }}"]
+   }
+   ]
+},
+{
+   "endpoint": "/api/jobs",
    "method": "POST",
   {{ include "input_headers.tmpl"}},
    "backend": [
@@ -62,6 +82,20 @@
 },
 {
    "endpoint": "/api/jobs/{job_id}",
+   "method": "OPTIONS",
+  {{ include "input_headers.tmpl"}},
+   "backend": [
+   {
+     "url_pattern": "/api/jobs/{job_id}",
+     "extra_config": {
+       {{ include "rate_limit_backend.tmpl"}}
+     },
+     "host": ["{{ .service.default_host }}"]
+   }
+   ]
+},
+{
+   "endpoint": "/api/jobs/{job_id}",
    "method": "UPDATE",
   {{ include "input_headers.tmpl"}},
    "backend": [
@@ -77,6 +111,26 @@
 {
    "endpoint": "/api/jobs/stop/{job_id}",
    "method": "POST",
+  {{ include "input_headers.tmpl"}},
+   "backend": [
+   {
+     "url_pattern": "/api/jobs/stop/{job_id}",
+     "extra_config": {
+       {{ include "rate_limit_backend.tmpl"}},
+        "plugin/http-client":{
+	           "name":"bill-balance",
+	           "bill-balance":{
+	               "path": "/api/jobs/stop/{job_id}"
+	           }
+	      }
+     },
+     "host": ["{{ .service.default_host }}"]
+   }
+   ]
+},
+{
+   "endpoint": "/api/jobs/stop/{job_id}",
+   "method": "OPTIONS",
   {{ include "input_headers.tmpl"}},
    "backend": [
    {
@@ -115,6 +169,26 @@
    ]
 },
 {
+   "endpoint": "/api/jobs/close/{job_id}",
+   "method": "OPTIONS",
+  {{ include "input_headers.tmpl"}},
+   "backend": [
+   {
+     "url_pattern": "/api/jobs/close/{job_id}",
+     "extra_config": {
+       {{ include "rate_limit_backend.tmpl"}},
+        "plugin/http-client":{
+	           "name":"bill-balance",
+	           "bill-balance":{
+	               "path": "/api/jobs/close/{job_id}"
+	           }
+	      }
+     },
+     "host": ["{{ .service.default_host }}"]
+   }
+   ]
+},
+{
    "endpoint": "/api/jobs/{job_type}",
    "method": "POST",
   {{ include "input_headers.tmpl"}},
@@ -135,8 +209,48 @@
    ]
 },
 {
+   "endpoint": "/api/jobs/{job_type}",
+   "method": "OPTIONS",
+  {{ include "input_headers.tmpl"}},
+   "backend": [
+   {
+     "url_pattern": "/api/jobs/{job_type}",
+     "extra_config": {
+       {{ include "rate_limit_backend.tmpl"}},
+        "plugin/http-client":{
+	           "name":"bill-balance",
+	           "bill-balance":{
+	               "path": "/api/jobs/{job_type}"
+	           }
+	      }
+     },
+     "host": ["{{ .service.default_host }}"]
+   }
+   ]
+},
+{
    "endpoint": "/api/jobs/upload/test/{job_id}",
    "method": "POST",",
+  {{ include "input_headers.tmpl"}},
+   "backend": [
+   {
+     "url_pattern": "/api/jobs/upload/test/{job_id}",
+     "extra_config": {
+       {{ include "rate_limit_backend.tmpl"}},
+        "plugin/http-client":{
+	           "name":"bill-balance",
+	           "bill-balance":{
+	               "path": "/api/jobs/upload/test/{job_id}"
+	           }
+	      }
+     },
+     "host": ["{{ .service.default_host }}"]
+   }
+   ]
+},
+{
+   "endpoint": "/api/jobs/upload/test/{job_id}",
+   "method": "OPTIONS",",
   {{ include "input_headers.tmpl"}},
    "backend": [
    {
