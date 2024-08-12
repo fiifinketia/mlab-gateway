@@ -5,7 +5,7 @@ services:
     volumes:
       - .:/etc/krakend
     ports:
-      - "8080:8080"
+      - "8090:8090"
     environment:
       - FC_ENABLE=1
       - FC_SETTINGS=config/settings/$ENV

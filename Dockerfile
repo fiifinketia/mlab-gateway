@@ -19,7 +19,7 @@ FROM devopsfaith/krakend
 COPY --from=builder --chown=krakend /tmp/krakend.json .
 # WORKDIR /etc/krakend/plugins
 # RUN make amd64
-EXPOSE 8080
+EXPOSE 8090
 
 # Uncomment with Enterprise image:
 # COPY LICENSE /etc/krakend/LICENSE
