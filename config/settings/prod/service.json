@@ -5,12 +5,16 @@
 	"timeout": "3s",
 	"cache_ttl": "3s",
 	"output_encoding": "json",
-	"extra_config": {},
+	"extra_config": {
+		"router": {
+			"auto_options": true
+		}
+	},
 	"plugin": {
 		"pattern": ".so",
 		"folder": "/etc/krakend/plugins"
 	},
 	"client_tls": {
-			"allow_insecure_connections": true
+		"allow_insecure_connections": true
 	}
 }
