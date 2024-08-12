@@ -5,6 +5,7 @@
    "backend": [
    {
      "url_pattern": "/api/models",
+     "is_collection": true,
      "extra_config": {
        {{ include "rate_limit_backend.tmpl"}}
      },
