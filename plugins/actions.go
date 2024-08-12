@@ -24,7 +24,7 @@ var pathActions = []PathAction{
 		"POST:/api/jobs/close/{job_id}", "close:job",
 	},
 	{
-		"POST:/api/jobs/{job_type}", "run:job",
+		"POST:/api/jobs/run/{job_type}", "run:job",
 	},
 	{
 		"POST:/api/jobs/upload/test/{job_id}", "upload:test:job",

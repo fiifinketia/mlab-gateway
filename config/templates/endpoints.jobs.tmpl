@@ -115,18 +115,18 @@
    ]
 },
 {
-   "endpoint": "/api/jobs/{job_type}",
+   "endpoint": "/api/jobs/run/{job_type}",
    "method": "POST",
   {{ include "input_headers.tmpl"}},
    "backend": [
    {
-     "url_pattern": "/api/jobs/{job_type}",
+     "url_pattern": "/api/jobs/run/{job_type}",
      "extra_config": {
        {{ include "rate_limit_backend.tmpl"}},
         "plugin/http-client":{
 	           "name":"bill-balance",
 	           "bill-balance":{
-	               "path": "/api/jobs/{job_type}"
+	               "path": "/api/jobs/run/{job_type}"
 	           }
 	      }
      },
