@@ -1,3 +1,17 @@
 {{ template "endpoints.models.tmpl" . }},
 {{ template "endpoints.datasets.tmpl" . }},
-{{ template "endpoints.billings.tmpl" . }}
+{{ template "endpoints.billings.tmpl" . }},
+{
+   "endpoint": "/openapi.json",
+   "method": "GET",
+  {{ include "input_headers.tmpl"}},
+   "backend": [
+   {
+     "url_pattern": "/api/openapi.json",
+     "extra_config": {
+       {{ include "rate_limit_backend.tmpl"}}
+     },
+     "host": ["{{ .service.default_host }}"]
+   }
+   ]
+}
