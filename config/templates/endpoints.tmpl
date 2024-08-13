@@ -32,4 +32,22 @@
      "host": ["{{ .service.default_host }}"]
    }
    ]
+},
+{
+   "endpoint": "/api/runners",
+   "method": "GET",
+  {{ include "input_headers.tmpl"}},
+   "output_encoding": "string",
+      "backend": [
+        {
+          "encoding": "string",
+          "sd": "static",
+          "method": "GET",
+          "host": [
+            "https://sysmonitor.appatechlab.com:8080/"
+          ],
+          "disable_host_sanitize": false,
+          "group": "1"
+        }
+      ]
 }
