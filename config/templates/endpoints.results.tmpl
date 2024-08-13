@@ -21,7 +21,7 @@
    {
      "url_pattern": "/api/results",
      "extra_config": {
-       {{ include "rate_limit_backend.tmpl"}},
+       {{ include "rate_limit_backend.tmpl"}}
      },
      "host": ["{{ .service.default_host }}"]
    }
