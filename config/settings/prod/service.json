@@ -10,6 +10,8 @@
 			"auto_options": true
 		},
 		"auth/api-keys": {
+			"strategy": "header",
+			"identifier": "X-Key",
 			"keys": [
 				{
 					"key": "a3dc45d2-4b4b-410d-83e9-bee58fe2c79e",
