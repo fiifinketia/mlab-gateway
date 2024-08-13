@@ -1,0 +1,72 @@
+{
+   "endpoint": "/api/results",
+   "method": "GET",
+  {{ include "input_headers.tmpl"}},
+   "backend": [
+   {
+     "url_pattern": "/api/results/user",
+     "is_collection": true,
+     "extra_config": {
+       {{ include "rate_limit_backend.tmpl"}}
+     },
+     "host": ["{{ .service.default_host }}"]
+   }
+   ]
+},
+{
+   "endpoint": "/api/results",
+   "method": "POST",
+  {{ include "input_headers.tmpl"}},
+   "backend": [
+   {
+     "url_pattern": "/api/results",
+     "extra_config": {
+       {{ include "rate_limit_backend.tmpl"}},
+     },
+     "host": ["{{ .service.default_host }}"]
+   }
+   ]
+},
+{
+   "endpoint": "/api/results/{result_id}",
+   "method": "GET",
+  {{ include "input_headers.tmpl"}},
+   "backend": [
+   {
+     "url_pattern": "/api/results/{result_id}",
+     "is_collection": true,
+     "extra_config": {
+       {{ include "rate_limit_backend.tmpl"}}
+     },
+     "host": ["{{ .service.default_host }}"]
+   }
+   ]
+},
+{
+   "endpoint": "/api/results/download/{result_id}/{file_name}",
+   "method": "GET",
+  {{ include "input_headers.tmpl"}},
+   "backend": [
+   {
+     "url_pattern": "/api/results/download/{result_id}/{file_name}",
+     "extra_config": {
+       {{ include "rate_limit_backend.tmpl"}}
+     },
+     "host": ["{{ .service.default_host }}"]
+   }
+   ]
+},
+{
+   "endpoint": "/api/results/download/{result_id}",
+   "method": "GET",
+  {{ include "input_headers.tmpl"}},
+   "backend": [
+   {
+     "url_pattern": "/api/results/download/{result_id}",
+     "extra_config": {
+       {{ include "rate_limit_backend.tmpl"}}
+     },
+     "host": ["{{ .service.default_host }}"]
+   }
+   ]
+}

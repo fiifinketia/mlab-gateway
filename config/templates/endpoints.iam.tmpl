@@ -1,14 +1,10 @@
-{{ template "endpoints.models.tmpl" . }},
-{{ template "endpoints.datasets.tmpl" . }},
-{{ template "endpoints.jobs.tmpl" . }},
-{{ template "endpoints.billings.tmpl" . }},
 {
-   "endpoint": "/api/openapi.json",
-   "method": "GET",
+   "endpoint": "/api/iam/ssh_key",
+   "method": "POST",
   {{ include "input_headers.tmpl"}},
    "backend": [
    {
-     "url_pattern": "/api/openapi.json",
+     "url_pattern": "/api/iam/ssh_key",
      "extra_config": {
        {{ include "rate_limit_backend.tmpl"}}
      },
@@ -17,13 +13,12 @@
    ]
 },
 {
-   "endpoint": "/api/projects",
+   "endpoint": "/api/iam/ssh_key",
    "method": "GET",
   {{ include "input_headers.tmpl"}},
    "backend": [
    {
-     "url_pattern": "/api/projects",
-     "is_collection": true,
+     "url_pattern": "/api/iam/ssh_key",
      "extra_config": {
        {{ include "rate_limit_backend.tmpl"}}
      },
