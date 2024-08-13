@@ -2,7 +2,7 @@
 	"port": 8090,
 	"environment": "PRODUCTION",
 	"default_host": "http://host.docker.internal:8095/",
-	"timeout": "20s",
+	"timeout": "120s",
 	"cache_ttl": "3s",
 	"output_encoding": "json",
 	"extra_config": {
