@@ -37,6 +37,13 @@
    "endpoint": "/api/runners",
    "method": "GET",
   {{ include "input_headers.tmpl"}},
+    "extra_config": {
+        "auth/api-keys": {
+          "roles": [
+            "get-runner"
+          ]
+        }
+      },
    "output_encoding": "json",
       "backend": [
         {
