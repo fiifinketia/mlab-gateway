@@ -44,10 +44,12 @@
 {
    "endpoint": "/api/results/download/{result_id}/{file_name}",
    "method": "GET",
+   "output_encoding": "no-op",
   {{ include "input_headers.tmpl"}},
    "backend": [
    {
      "url_pattern": "/api/results/download/{result_id}/{file_name}",
+     "encoding": "no-op",
      "extra_config": {
        {{ include "rate_limit_backend.tmpl"}}
      },
@@ -58,10 +60,12 @@
 {
    "endpoint": "/api/results/download/{result_id}",
    "method": "GET",
+   "output_encoding": "no-op",
   {{ include "input_headers.tmpl"}},
    "backend": [
    {
      "url_pattern": "/api/results/download/{result_id}",
+     "encoding": "no-op",
      "extra_config": {
        {{ include "rate_limit_backend.tmpl"}}
      },
