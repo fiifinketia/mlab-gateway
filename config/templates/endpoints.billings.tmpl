@@ -39,4 +39,19 @@
      "host": ["{{ .service.default_host }}"]
    }
    ]
+},
+{
+   "endpoint": "/api/billings",
+   "method": "GET",
+  {{ include "input_headers.tmpl"}},
+   "backend": [
+   {
+     "url_pattern": "/api/billings",
+     "is_collection": true,
+     "extra_config": {
+       {{ include "rate_limit_backend.tmpl"}}
+     },
+     "host": ["{{ .service.default_host }}"]
+   }
+   ]
 }
