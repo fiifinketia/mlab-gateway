@@ -29,6 +29,9 @@
 {
    "endpoint": "/api/billings/checkout",
    "method": "POST",
+   "input_query_strings": [
+        "user_email"
+      ],
   {{ include "input_headers.tmpl"}},
    "backend": [
    {
